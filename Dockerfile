@@ -1,7 +1,7 @@
 FROM alpine:latest
 
-RUN groupadd sshgroup && \
-    useradd -ms /bin/bash -g sshgroup jetbrain && \
+RUN addgroup sshgroup && \
+    adduser -D -s /bin/bash -g sshgroup jetbrain && \
     mkdir -p /home/jetbrain/.ssh
 COPY key.pub /home/jetbrain/.ssh/authorized_keys
 

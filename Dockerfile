@@ -5,12 +5,12 @@ RUN addgroup sshgroup && \
     mkdir -p /home/jetbrain/.ssh
 COPY key.pub /home/jetbrain/.ssh/authorized_keys
 
-RUN apt update && \
-    apt install -y git && \
-    apt install -y openjdk-18-jdk && \
-    apt install -y maven && \
-    apt install -y openssh-server && \
-	apt clean;
+RUN apk update && \
+    apk add git && \
+    apk add openjdk-18-jdk && \
+    apk add maven && \
+    apk add openssh-server && \
+	apk clean;
 
 RUN chown jetbrain:sshgroup /home/jetbrain/.ssh/authorized_keys && \
     chmod 600 /home/jetbrain/.ssh/authorized_keys && \

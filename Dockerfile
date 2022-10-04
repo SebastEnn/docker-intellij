@@ -1,4 +1,4 @@
-FROM ubuntu:22.10
+FROM alpine:latest
 
 RUN groupadd sshgroup && \
     useradd -ms /bin/bash -g sshgroup jetbrain && \

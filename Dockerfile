@@ -6,10 +6,10 @@ RUN groupadd sshgroup && \
 COPY key.pub /home/jetbrain/.ssh/authorized_keys
 
 RUN apt update && \
-    apt install -y git && \
-    apt install -y openjdk-18-jdk && \
-    apt install -y maven && \
-    apt install -y openssh-server && \
+	apt install -y git && \
+	apt install -y openjdk-18-jdk && \
+	apt install -y maven && \
+	apt install -y openssh-server && \
 	apt clean;
 
 RUN chown jetbrain:sshgroup /home/jetbrain/.ssh/authorized_keys && \
